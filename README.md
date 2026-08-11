@@ -1,5 +1,3 @@
-# TabPFN-MarMenor
-Few-shot TabPFN framework for high-fidelity multivariate water quality prediction (Chl-a &amp; Turbidity) in the Mar Menor lagoon.
 # 🌊 Mar Menor Water Quality Prediction with TabPFN
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
@@ -16,12 +14,11 @@ This repository contains the complete pipeline for ecological water quality clas
 
 - [Overview](#-overview)
 - [Dataset](#-dataset)
+- [Project Structure](#-project-structure)
 - [Installation](#-installation)
 - [Usage](#-usage)
-- [Project Structure](#-project-structure)
 - [Methodology](#-methodology)
-- [Results](#-results)
-- [Figures Generated](#-figures-generated)
+- [Results & Figures](#-results--figures)
 - [Citation](#-citation)
 - [License](#-license)
 
@@ -35,7 +32,7 @@ The Mar Menor is the largest saltwater lagoon in Europe, located in the Region o
 - **Regression**: Continuous prediction of Chlorophyll and Turbidity values
 - **Model Comparison**: TabPFN vs. Random Forest, Gradient Boosting, SVM, KNN, Ridge, Linear Regression, SVR
 - **Computational Metrics**: Training time, prediction time, memory usage, NLL, ECE
-- **Scientific Figures**: Learning curves, temporal decomposition, feature importance, calibration curves, radar charts
+- **Scientific Figures**: Learning curves, temporal decomposition, feature importance, calibration curves, radar charts, residual analysis
 
 ### Ecological Thresholds (Chlorophyll)
 | Category | Range (µg/L) | Ecological State |
@@ -57,12 +54,12 @@ The Mar Menor is the largest saltwater lagoon in Europe, located in the Region o
 
 ## 📊 Dataset
 
-Place your CSV files in the `data/raw/` directory:
+Place your CSV files in the `dataset_examples/` directory (as referenced by the scripts):
 
 | File | Target Variable | Description |
 |------|----------------|-------------|
-| `dataset_MarMenor-chl.csv` | `Mean_Chl_ugl` | Chlorophyll concentration (µg/L) |
-| `dataset_MarMenor-Tub.csv` | `Mean_Turb_NTU` | Turbidity (NTU) |
+| `dataset_examples/dataset_MarMenor-chl.csv` | `Mean_Chl_ugl` | Chlorophyll concentration (µg/L) |
+| `dataset_examples/dataset_MarMenor-Tub.csv` | `Mean_Turb_NTU` | Turbidity (NTU) |
 
 ### Expected Columns
 - `TIMESTAMP`: Datetime of measurement
@@ -75,6 +72,86 @@ Place your CSV files in the `data/raw/` directory:
 - Target columns: `Mean_Chl_ugl` or `Mean_Turb_NTU`
 
 > **Note**: The scripts handle negative values (common in sensor data) with 5 different correction strategies.
+
+---
+
+## 📁 Project Structure
+
+```
+mar-menor-tabpfn-analysis/
+│
+├── 📂 dataset_examples/              # Input datasets (create this folder)
+│   ├── dataset_MarMenor-chl.csv      # Chlorophyll dataset
+│   └── dataset_MarMenor-Tub.csv      # Turbidity dataset
+│
+├── 📂 resultados_marMenor-Chl_tabPFN/   # Auto-generated: Chlorophyll results
+│   ├── eda_mar_menor.pdf
+│   ├── distribution_negative_values.pdf
+│   ├── chlorophyll_value_analysis.pdf
+│   ├── correction_comparison_strategy_*.pdf
+│   ├── categorization_comparison_mar_menor.pdf
+│   ├── computational_metrics_mar_menor.pdf
+│   ├── metrics_summary_mar_menor.csv
+│   ├── model_comparison_mar_menor.pdf
+│   ├── model_comparison_classification_mar_menor.pdf
+│   ├── model_comparison_regression_mar_menor.pdf
+│   ├── time_accuracy_tradeoff_mar_menor.pdf
+│   ├── smote_balancing_mar_menor.pdf
+│   ├── improvement_comparison_classification.pdf
+│   ├── improvement_comparison_regression.pdf
+│   ├── figure4_calibration_curves_chl.pdf
+│   ├── figure5_time_accuracy_tradeoff_chl.pdf
+│   ├── figure6_radar_chart_chl.pdf
+│   ├── figure4c_temporal_decomposition_chl.pdf
+│   ├── figure5_feature_importance_chl.pdf
+│   ├── figure5_feature_importance_tabpfn_chl.pdf
+│   ├── learning_curve_*_chl.pdf
+│   ├── learning_curve_regression_*_chl.pdf
+│   ├── regression_scatter_*.pdf
+│   ├── residuals_plot_*.pdf
+│   ├── confusion_matrix_*_mar_menor.pdf
+│   ├── perclass_metrics_*_mar_menor.pdf
+│   ├── complete_results_mar_menor.pkl
+│   ├── tabpfn_model_mar_menor.pkl
+│   └── tabpfn_reg_model_mar_menor.pkl
+│
+├── 📂 resultados_marMenor-Turb_tabPFN/  # Auto-generated: Turbidity results
+│   ├── eda_mar_menor_turb.pdf
+│   ├── distribution_negative_values_turb.pdf
+│   ├── turbidity_value_analysis.pdf
+│   ├── correction_comparison_turb_strategy_*.pdf
+│   ├── categorization_comparison_mar_menor_turb.pdf
+│   ├── computational_metrics_mar_menor_turb.pdf
+│   ├── metrics_summary_mar_menor_turb.csv
+│   ├── model_comparison_mar_menor_turb.pdf
+│   ├── model_comparison_classification_mar_menor_turb.pdf
+│   ├── model_comparison_regression_mar_menor_turb.pdf
+│   ├── time_accuracy_tradeoff_mar_menor_turb.pdf
+│   ├── smote_balancing_mar_menor_turb.pdf
+│   ├── improvement_comparison_classification_turb.pdf
+│   ├── improvement_comparison_regression_turb.pdf
+│   ├── figure4_calibration_curves_turb.pdf
+│   ├── figure5_time_accuracy_tradeoff_turb.pdf
+│   ├── figure6_radar_chart_turb.pdf
+│   ├── figure4c_temporal_decomposition_turb.pdf
+│   ├── figure5_feature_importance_turb.pdf
+│   ├── figure5_feature_importance_tabpfn_turb.pdf
+│   ├── learning_curve_*_turb.pdf
+│   ├── regression_scatter_*.pdf
+│   ├── residuals_plot_*.pdf
+│   ├── confusion_matrix_*_mar_menor_turb.pdf
+│   ├── perclass_metrics_*_mar_menor_turb.pdf
+│   ├── complete_results_mar_menor_turb.pkl
+│   ├── tabpfn_model_mar_menor_turb.pkl
+│   └── tabpfn_reg_model_mar_menor_turb.pkl
+│
+├── 📄 usetFPN_v4-metrics-Chl.py      # Main script: Chlorophyll analysis
+├── 📄 usetFPN_v4-metrics-Turb.py     # Main script: Turbidity analysis
+├── 📄 requirements.txt               # Python dependencies
+├── 📄 .gitignore                     # Git ignore rules
+├── 📄 LICENSE                        # License file
+└── 📄 README.md                      # This file
+```
 
 ---
 
@@ -114,20 +191,27 @@ login()  # Enter your token or use: huggingface-cli login
 
 ## 🎯 Usage
 
-### Quick Start - Chlorophyll Analysis
+### Prepare folders
+Before running, ensure the input folder exists and contains your datasets:
 ```bash
-python src/run_chlorophyll.py
+mkdir -p dataset_examples
+# Place dataset_MarMenor-chl.csv and dataset_MarMenor-Tub.csv inside
 ```
 
-### Quick Start - Turbidity Analysis
+### Run Chlorophyll Analysis
 ```bash
-python src/run_turbidity.py
+python usetFPN_v4-metrics-Chl.py
+```
+
+### Run Turbidity Analysis
+```bash
+python usetFPN_v4-metrics-Turb.py
 ```
 
 ### Interactive Mode (Negative Value Correction)
 Both scripts support interactive selection of correction strategies for negative values:
-1. Replace with minimum positive value (recommended)
-2. Log transformation
+1. **Replace with minimum positive value** (recommended default)
+2. Log transformation `log(x + offset)`
 3. Remove negative values
 4. KNN imputation
 5. Censored variable modeling (Tobit)
@@ -135,43 +219,9 @@ Both scripts support interactive selection of correction strategies for negative
 Press `Enter` to use the recommended strategy (1).
 
 ### Output
-Results are saved in:
-- `results/resultados_marMenor-Chl_tabPFN/`
-- `results/resultados_marMenor-Turb_tabPFN/`
-
----
-
-## 🏗️ Project Structure
-
-```
-mar-menor-tabpfn-analysis/
-├── data/               # Input datasets (not tracked by git)
-│   ├── raw/
-│   │   ├── dataset_MarMenor-chl.csv
-│   │   └── dataset_MarMenor-Tub.csv
-│   └── processed/
-├── src/                # Source code
-│   ├── config.py
-│   ├── data_preprocessing.py
-│   ├── models.py
-│   ├── metrics.py
-│   ├── visualizations.py
-│   ├── utils.py
-│   ├── run_chlorophyll.py
-│   └── run_turbidity.py
-├── notebooks/          # Jupyter notebooks exploratorios
-│   ├── 01_eda_chlorophyll.ipynb
-│   └── 02_eda_turbidity.ipynb
-├── results/            # Generated figures and models
-│   ├── resultados_marMenor-Chl_tabPFN/
-│   └── resultados_marMenor-Turb_tabPFN/
-├── docs/               # Documentation and images
-├── requirements.txt    # Python dependencies
-├── .gitignore
-├── LICENSE
-├── CITATION.cff
-└── README.md           # This file
-```
+Results are automatically saved in:
+- `resultados_marMenor-Chl_tabPFN/`
+- `resultados_marMenor-Turb_tabPFN/`
 
 ---
 
@@ -211,7 +261,7 @@ mar-menor-tabpfn-analysis/
 
 ---
 
-## 📈 Results
+## 📈 Results & Figures
 
 ### Best Models (Example Output)
 
@@ -223,32 +273,38 @@ mar-menor-tabpfn-analysis/
 
 > Actual results depend on your specific dataset and hardware.
 
----
+### Figures Generated
 
-## 🎨 Figures Generated
+Each execution generates **18+ publication-ready figures** per variable:
 
-Each execution generates **18+ publication-ready figures**:
+| # | Figure | Filename Pattern | Description |
+|---|--------|------------------|-------------|
+| 1 | EDA | `eda_mar_menor*.pdf` | 9-panel exploratory analysis |
+| 2 | Negative Values | `distribution_negative_values*.pdf` | Histogram of sensor errors |
+| 3 | Correction | `correction_comparison*.pdf` | Before/after correction |
+| 4 | Categories | `categorization_comparison*.pdf` | Ecological vs statistical |
+| 5 | **Learning Curves** | `learning_curve_*_chl/turb.pdf` | Individual model learning curves |
+| 6 | **Temporal Decomposition** | `figure4c_temporal_decomposition_*.pdf` | Seasonal & yearly patterns |
+| 7 | **Feature Importance** | `figure5_feature_importance_*.pdf` | Top 15 features + cumulative |
+| 8 | **Calibration** | `figure4_calibration_curves_*.pdf` | Reliability diagrams |
+| 9 | **Time-Accuracy** | `figure5_time_accuracy_tradeoff_*.pdf` | Pareto frontier analysis |
+| 10 | **Radar Chart** | `figure6_radar_chart_*.pdf` | Top 5 models multi-metric |
+| 11 | Confusion Matrix | `confusion_matrix_*.pdf` | Per-model confusion matrices |
+| 12 | Per-Class Metrics | `perclass_metrics_*.pdf` | Accuracy/Precision/Recall/F1 per class |
+| 13 | Regression Scatter | `regression_scatter_*.pdf` | Predicted vs Actual |
+| 14 | Residuals | `residuals_plot_*.pdf` | Residual analysis |
+| 15 | SMOTE | `smote_balancing*.pdf` | Class balancing visualization |
+| 16 | Comparison | `model_comparison*.pdf` | All models compared |
+| 17 | Computational | `computational_metrics*.pdf` | 6-panel metrics dashboard |
+| 18 | Tradeoff | `time_accuracy_tradeoff*.pdf` | Scatter plot analysis |
 
-| Figure | Filename | Description |
-|--------|----------|-------------|
-| EDA | `eda_mar_menor.pdf` / `eda_mar_menor_turb.pdf` | 9-panel exploratory analysis |
-| Negative Values | `distribution_negative_values.pdf` | Histogram of sensor errors |
-| Correction | `correction_comparison_strategy_*.pdf` | Before/after correction |
-| Categories | `categorization_comparison_mar_menor.pdf` | Ecological vs statistical |
-| **Learning Curves** | `learning_curve_*_chl/turb.pdf` | Individual model learning curves |
-| **Temporal Decomposition** | `figure4c_temporal_decomposition_*.pdf` | Seasonal & yearly patterns |
-| **Feature Importance** | `figure5_feature_importance_*.pdf` | Top 15 features + cumulative |
-| **Calibration** | `figure4_calibration_curves_*.pdf` | Reliability diagrams |
-| **Time-Accuracy** | `figure5_time_accuracy_tradeoff_*.pdf` | Pareto frontier analysis |
-| **Radar Chart** | `figure6_radar_chart_*.pdf` | Top 5 models multi-metric |
-| Confusion Matrix | `confusion_matrix_*.pdf` | Per-model confusion matrices |
-| Per-Class Metrics | `perclass_metrics_*.pdf` | Accuracy/Precision/Recall/F1 per class |
-| Regression Scatter | `regression_scatter_*.pdf` | Predicted vs Actual |
-| Residuals | `residuals_plot_*.pdf` | Residual analysis |
-| SMOTE | `smote_balancing_*.pdf` | Class balancing visualization |
-| Comparison | `model_comparison_*.pdf` | All models compared |
-| Computational | `computational_metrics_*.pdf` | 6-panel metrics dashboard |
-| Tradeoff | `time_accuracy_tradeoff_*.pdf` | Scatter plot analysis |
+### Serialized Outputs
+| File | Description |
+|------|-------------|
+| `complete_results_mar_menor*.pkl` | Complete results dictionary |
+| `tabpfn_model_mar_menor*.pkl` | Saved TabPFN classifier |
+| `tabpfn_reg_model_mar_menor*.pkl` | Saved TabPFN regressor |
+| `metrics_summary_mar_menor*.csv` | Metrics summary table |
 
 ---
 
