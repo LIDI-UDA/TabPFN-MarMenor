@@ -334,9 +334,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- [TabPFN](https://github.com/PriorLabs/TabPFN) team for the transformer-based tabular model
-- [scikit-learn](https://scikit-learn.org/) community
-- Mar Menor monitoring stations for the environmental data
+This work was partially supported by research project MORELLINO (CIPROM/2023/29), funded by ``Direcció General de Ciència i Investigació'' Generalitat Valenciana - SPAIN, through the AIGUALERT, funded  by the European Union under the European Regional Development Fund (ERDF) Programme Comunitat Valenciana 2021-2027, by IVACE+i Innovation calls for proposals, ‘Strategic Cooperation Projects’ (Reference INNEST/2025/486), and  by the European Union's Horizon Europe project REMARKABLE under the MSCA-SE grant ID: 101086387. The authors wish to thank the Vice-Rector for Research of the Universidad del Azuay and academic support and the entire staff at the Computer Science Research \& Development Laboratory (LIDI).
 
 ---
 
