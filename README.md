@@ -341,7 +341,7 @@ This work was partially supported by research project MORELLINO (CIPROM/2023/29)
 
 ## 📧 Contact
 
-For questions or collaborations, please open an [Issue](https://github.com/yourusername/mar-menor-tabpfn-analysis/issues) or contact: lidi@uazuay.edu.ec or marore@uazuay.edu.ec
+For questions or collaborations, please open an [Issue](#) or contact: lidi@uazuay.edu.ec or marore@uazuay.edu.ec
 
 ---
 *Last updated: August 2026*
