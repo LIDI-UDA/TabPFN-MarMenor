@@ -342,7 +342,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-For questions or collaborations, please open an [Issue](https://github.com/yourusername/mar-menor-tabpfn-analysis/issues) or contact: your.email@institution.es
+For questions or collaborations, please open an [Issue](https://github.com/yourusername/mar-menor-tabpfn-analysis/issues) or contact: lidi@uazuay.edu.ec or marore@uazuay.edu.ec
 
 ---
 *Last updated: August 2026*
