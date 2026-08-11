@@ -1,0 +1,16 @@
+Model,Type,Main Metric,Accuracy,F1 Macro,F1 Weighted,NLL,ECE,MSE,MAE,Train Time (s),Pred Time (s),Memory (MB)
+RandomForestClassifier_Clas,classifica,Acc: 0.9665,0.9665,0.7221,0.9656,0.1394,0.0540,N/A,N/A,1.67,0.015,741
+GradientBoostingClassifier_Clas,classifica,Acc: 0.9557,0.9557,0.6844,0.9537,0.1732,0.0601,N/A,N/A,10.43,0.006,758
+SVM_Clas,classifica,Acc: 0.8923,0.8923,0.4508,0.8831,0.2785,0.0658,N/A,N/A,3.28,0.085,786
+KNeighborsClassifier_Clas,classifica,Acc: 0.9390,0.9390,0.6570,0.9350,0.5619,0.0544,N/A,N/A,0.01,0.026,786
+RandomForestRegressor_Reg,regression,R²: 0.8237,0.4593,0.0567,0.4909,N/A,N/A,77.9825,3.4855,7.92,0.041,796
+RidgeRegression_Reg,regression,R²: 0.3557,0.0431,0.0161,0.0602,N/A,N/A,284.9259,11.5926,0.00,0.000,799
+LinearRegression_Reg,regression,R²: 0.3555,0.0419,0.0150,0.0626,N/A,N/A,285.0307,11.6224,0.00,0.000,800
+SVR_Reg,regression,R²: 0.4503,0.1830,0.0358,0.2266,N/A,N/A,243.1094,7.9685,1.91,0.223,801
+TabPFN_Clas,classifica,Acc: 0.9773,0.9773,0.6524,0.9755,0.0734,0.0289,N/A,N/A,0.50,3.125,1747
+TabPFN_Reg,regression,R²: 0.8599,0.5622,0.1263,0.5811,N/A,N/A,61.9739,2.4218,0.37,0.998,1846
+RandomForest_Optimized,classifica,Acc: 0.9450,0.9450,0.6504,0.9519,0.1725,0.1050,N/A,N/A,8.33,0.032,1944
+GradientBoosting_Optimized,classifica,Acc: 0.9533,0.9533,0.6475,0.9589,0.2464,0.0864,N/A,N/A,119.31,0.033,1939
+SVM_Optimized,classifica,Acc: 0.8409,0.8409,0.5350,0.8792,0.3548,0.1779,N/A,N/A,11.30,0.181,1959
+RandomForestReg_Optimized,regression,R²: 0.8196,0.4462,0.0545,0.4736,N/A,N/A,79.7708,3.5075,13.37,0.047,1964
+SVR_Optimized,regression,R²: 0.4649,0.1998,0.0429,0.2440,N/A,N/A,236.6646,7.5985,1.91,0.215,1970
