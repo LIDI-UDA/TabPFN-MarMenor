@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Few-Shot TabPFN Architectures for High-Fidelity Multivariate Water Quality Prediction in the MarMenorSocio-EcologicalSystem"
+authors:
+  - family-names: "Zambrano-Martinez"
+    given-names: "Jorge Luis"
+    orcid: "https://orcid.org/0000-0002-5339-7860"
+repository-code: "https://github.com/yourusername/mar-menor-tabpfn-analysis"
+abstract: "Predicting critical eutrophication tipping points in hypersaline coastal lagoons remains beyond the capabilities of conventional mechanistic models, creating persistent operational gaps between sensor-based monitoring and anticipatory regulatory governance. This study assesses the Tabular Prior-Data Fitted Network (TabPFN), an amortized Bayesian inference framework, for operational forecasting of Chlorophyll-a and Turbidity in the Mar Menor (Spain), Europe’s largest hypersaline lagoon experiencing recurrent mass mortality events. Based on 8,357 hourly observations (2023) and 623 daily measurements (2022–2024) collected from 20 sensor stations, we conducted a benchmarking of TabPFN against Random Forest, Gradient Boosting, and Support Vector Machine (SVM). This process entailed cyclical temporal feature engineering and the implementation of SMOTE to mitigate class imbalance associated with infrequent mortality-risk events. TabPFN attained an outstanding deterministic accuracy, with R² values of 0.956 for Chlorophyll-a and 0.860 for Turbidity, alongside notable ecological state classification accuracies of 93.2\% and 97.7\%, respectively. The model demonstrated complete sensitivity for High Mortality Risk categories and exhibited excellent probabilistic calibration, with an Expected Calibration Error of less than 0.04. More important, the model decreased training duration by two orders of magnitude ($<$1 second compared to over 85 seconds for gradient boosting) without sacrificing predictive accuracy. These results demonstrate that tabular foundation models can surpass the accuracy-complexity trade-off in environmental informatics, thereby offering an empirically validated decision-support framework for real-time adaptive management in accordance with the European Water Framework Directive."
+keywords:
+  - "TabPFN"
+  - "Eutrophication"
+  - "Uncertainty Quantification"
+  - "Early Warning Systems"
+  - "Mar Menor"
+license: MIT
+date-released: 2024-01-01
