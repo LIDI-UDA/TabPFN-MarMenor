@@ -311,7 +311,8 @@ Each execution generates **18+ publication-ready figures** per variable:
 ## 📚 Citation
 
 If you use this code in your research, please cite:
-
+(In Progress)
+<!--
 ```bibtex
 @software{mar_menor_tabpfn_2024,
   author = {Your Name},
@@ -323,7 +324,7 @@ If you use this code in your research, please cite:
 
 Based on:
 - Pérez-Martín et al. (2023). *MMag Model of Mar Menor*. [Add full citation]
-
+-->
 ---
 
 ## 📜 License
